@@ -42,4 +42,9 @@ public class NotaFiscalServico {
             return new ResponseEntity<NotaFiscalModelo>(notaFiscalRepositorio.save(notaFiscalModelo), HttpStatus.CREATED);
         }
     }
+
+    //Rota para listar todos produtos
+    public Iterable<NotaFiscalModelo> listarNotaFiscal(){
+        return notaFiscalRepositorio.findAll();
+    }
 }
