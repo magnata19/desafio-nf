@@ -19,5 +19,6 @@ public class NotaFiscalModelo {
     private String razaoSocial;
     private String cnpj;
     private String descricaoProduto;
+    private double valorNotaFiscal;
 
 }

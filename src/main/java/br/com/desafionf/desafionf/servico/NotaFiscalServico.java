@@ -38,7 +38,10 @@ public class NotaFiscalServico {
         } else if (notaFiscalModelo.getDescricaoProduto().equals("")){
             respostaModelo.setMensagem("A descrição do produto é obrigatória.");
             return new ResponseEntity<RespostaModelo>(respostaModelo, HttpStatus.BAD_REQUEST);
-        } else {
+        } else if (notaFiscalModelo.getValorNotaFiscal() <= 0){ 
+            respostaModelo.setMensagem("O valor é obrigatório.");
+            return new ResponseEntity<RespostaModelo>(respostaModelo, HttpStatus.BAD_REQUEST);
+        }else {
             return new ResponseEntity<NotaFiscalModelo>(notaFiscalRepositorio.save(notaFiscalModelo), HttpStatus.CREATED);
         }
     }
